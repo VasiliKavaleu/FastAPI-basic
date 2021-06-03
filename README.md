@@ -14,5 +14,5 @@ poetry env use python3
 poetry install
 
 # Run project
-python3 runserver
+python3 main.py
 ```
