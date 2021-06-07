@@ -88,13 +88,13 @@ def get_single_book(pk: int = Path(..., gt=1, le=20), pages: int = Query(None, g
     return {"pk": pk, "pages": pages}
 
 
-@app.post('/new_book', response_model=Book)
+@app.post('/new_book', response_model=Book, response_model_exclude_unset=True) # response_model_exclude_unset
 def creat_book(item: Book):
     return item
 
 
 if __name__ == '__main__':
     uvicorn.run("main:app", 
-                port=8000, 
+                port=80, 
                 host="0.0.0.0", 
                 reload=True)
