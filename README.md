@@ -16,3 +16,13 @@ poetry install
 # Run project
 python3 main.py
 ```
+
+RUN in docker container
+```bash
+
+# Build image
+docker build -t fastapi .
+
+# Run container
+docker run -d --name fastapi -p 80:80 fastapi
+```
